@@ -6,14 +6,14 @@
 	padding:75px;
 }
 #ltext-1 {
-	font-size:52px;
-	display:inline-block;
+	font-size:62px;
+	display:inline;
 	color:white;
 	background-color:inherit;
 }
 #ltext-2 {
 	font-size:40px;
-	display:inline-block;
+	display:inline;
 	color:white;
 	background-color:inherit;
 }
