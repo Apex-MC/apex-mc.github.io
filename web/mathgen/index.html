@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/random_math.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+        <style>
+            @font-face {
+                font-family: Roboto
+                src: url(fonts/roboto/Roboto-Regular.woff)
+            }
+            * {
+                font-family:'Roboto', sans-serif;
+                margin:0;
+            }
+            #header {
+                padding:75px;
+            }
+            #ltext-1 {
+                font-size:62px;
+                display:inline;
+                color:white;
+                background-color:inherit;
+            }
+            #ltext-2 {
+                font-size:40px;
+                display:inline;
+                color:white;
+                background-color:inherit;
+            }
+            .grad1 {
+                background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+                background-image:linear-gradient(141deg, rgb(15, 184, 173) 0%, rgb(31, 200, 219) 51%, rgb(44, 181, 232) 75%);
+            }
+            .link {
+                color:#3481ef;
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+            }
+            .link:hover {
+                color:#5797f2;
+            }
+            #main-content {
+                padding:75px;
+            }
+            .s1 {
+                color:#7a7a7a;
+            }
+            p {
+                padding:10px;
+            }
+            #one {
+                font-size:24px;
+            }
+            #two {
+                font-size:24px;
+            }
+            #seperator {
+                font-size:28px;
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
+    </head>
+    <body onload="load()">
+        <div id="header" class="grad1">
+            <p id="ltext-1">Math</p>
+            <p id="ltext-2">Generator</p>
+        </div>
+            <div id="main-content">
+                <noscript>You need to enable javascript!<br><a href="file:///C:/Users/User/Desktop/Website/index.html">Refresh Page</a></noscript>
+                <div class="math">
+                    <span id="one"></span>
+                    <span id="seperator"></span>
+                    <span id="two"></span>
+                    <span id="form"></span>
+                </div>
+            </div>
+        <script src="js/materialize.min.js"></script>
+        <script defer src="js/fontawesome-all.js"></script>
+    </body>
+</html>
