@@ -26,7 +26,6 @@ function checkMath(){
         return;
     } else {
         document.getElementById("form").innerHTML = `<br><form method="post" id="mathForm"><input type="number" placeholder="Answer" id="answer"><button type='button' class="waves-effect waves-light btn" onclick="checkMath()">Submit</button></form><i class="material-icons right">clear</i>`;
-        document.getElementById("mathForm").reset();
         return;
     }
 }
