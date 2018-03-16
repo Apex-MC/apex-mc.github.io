@@ -39,7 +39,7 @@
         <script>
             function newCatBackground(){
             var backgroundRequest = new XMLHttpRequest();
-            backgroundRequest.open('GET', 'http://aws.random.cat/meow');
+            backgroundRequest.open('GET', 'https://aws.random.cat/meow');
             backgroundRequest.onload = function() {
                 const backgroundData = JSON.parse(backgroundRequest.responseText);
                 document.getElementById("styleContainer").innerHTML = `<style>html { background-image: url("${backgroundData.file}");background-repeat: no-repeat;background-size:cover; }</style>`
