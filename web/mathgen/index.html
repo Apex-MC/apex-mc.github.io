@@ -1,85 +1,64 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/random_math.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    </head>
+    <body>
         <style>
-            @font-face {
-                font-family: Roboto
-                src: url(fonts/roboto/Roboto-Regular.woff)
+            html, body {
+                border: 0;
+                padding: 0;
+                margin: 0;
+                height: 100%;
             }
-            * {
-                font-family:'Roboto', sans-serif;
-                margin:0;
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-            #header {
-                padding:75px;
+            .overlay {
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background: rgba(0, 0, 0, 0.7);  
             }
-            #ltext-1 {
-                font-size:62px;
-                display:inline;
-                color:white;
-                background-color:inherit;
-            }
-            #ltext-2 {
-                font-size:40px;
-                display:inline;
-                color:white;
-                background-color:inherit;
-            }
-            .grad1 {
-                background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-                background-image:linear-gradient(141deg, rgb(15, 184, 173) 0%, rgb(31, 200, 219) 51%, rgb(44, 181, 232) 75%);
-            }
-            .link {
-                color:#3481ef;
-                -o-transition:.5s;
-                -ms-transition:.5s;
-                -moz-transition:.5s;
-                -webkit-transition:.5s;
-            }
-            .link:hover {
-                color:#5797f2;
-            }
-            #main-content {
-                padding:75px;
-            }
-            .s1 {
-                color:#7a7a7a;
-            }
-            p {
-                padding:10px;
-            }
-            #one {
-                font-size:24px;
-            }
-            #two {
-                font-size:24px;
-            }
-            #seperator {
-                font-size:28px;
-                font-family: 'Roboto', sans-serif;
+            .box {
+                position: relative;
+                z-index: 1;
+                background: #FFFFFF;
+                max-width: 360px;
+                margin: 0 auto 100px;
+                padding: 45px;
+                text-align: center;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
             }
         </style>
-    </head>
-    <body onload="load()">
-        <div id="header" class="grad1">
-            <p id="ltext-1">Math</p>
-            <p id="ltext-2">Generator</p>
+        <div class="overlay">
+        <script>
+            function newCatBackground(){
+            var backgroundRequest = new XMLHttpRequest();
+            backgroundRequest.open('GET', 'http://aws.random.cat/meow');
+            backgroundRequest.onload = function() {
+                const backgroundData = JSON.parse(backgroundRequest.responseText);
+                document.getElementById("styleContainer").innerHTML = `<style>html { background-image: url("${backgroundData.file}");background-repeat: no-repeat;background-size:cover; }</style>`
+            };
+            backgroundRequest.send();
+            }
+            function newDogBackground(){
+                var backgroundRequest = new XMLHttpRequest();
+                backgroundRequest.open('GET', 'https://dog.ceo/api/breeds/image/random');
+                backgroundRequest.onload = function() {
+                    const backgroundData = JSON.parse(backgroundRequest.responseText);
+                    document.getElementById("styleContainer").innerHTML = `<style>html { background-image: url("${backgroundData.message}");background-repeat: no-repeat;background-size:cover; }</style>`
+                };
+                backgroundRequest.send();
+            }
+
+        </script>
+        <div id="styleContainer"></div>
+        <div class="box center"><h1>Apex Scripts</h1><br><button class="btn" onclick="newCatBackground()">Random Cat Background</button><button class="btn" onclick="newDogBackground()">Random Dog Background</button></div>
         </div>
-            <div id="main-content">
-                <noscript>You need to enable javascript!<br><a href="file:///C:/Users/User/Desktop/Website/index.html">Refresh Page</a></noscript>
-                <div class="math">
-                    <span id="one"></span>
-                    <span id="seperator"></span>
-                    <span id="two"></span>
-                    <span id="form"></span>
-                </div>
-            </div>
-        <script src="js/materialize.min.js"></script>
-        <script defer src="js/fontawesome-all.js"></script>
     </body>
 </html>

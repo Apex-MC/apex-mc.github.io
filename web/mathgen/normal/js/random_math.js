@@ -6,11 +6,11 @@ $('html').bind('keypress', function(e)
    }
 });
 function generateEq(){
-    var num1 = Math.floor(Math.random() * 1000);
-    var num2 = Math.floor(Math.random() * 1000);
+    var num1 = Math.floor(Math.random() * 100);
+    var num2 = Math.floor(Math.random() * 100);
     document.getElementById("one").innerHTML = num1;
     document.getElementById("two").innerHTML = num2;
-    document.getElementById("form").innerHTML = `<br><form method="post" id="mathForm"><input type="number" placeholder="Answer" id="answer"><button type='button' class="waves-effect waves-light btn" onclick="checkMath()">Submit</button></form>`;
+    document.getElementById("form").innerHTML = `<br><form method="post" id="mathForm"><input type="number" id="answer"><button type='button' class="waves-effect waves-light btn" onclick="checkMath()">Submit</button></form>`;
 }
 
 function checkMath(){
@@ -25,7 +25,7 @@ function checkMath(){
         document.getElementById("form").innerHTML = `<br><form method="post" id="mathForm"><input type="number" placeholder="${correctAnswer}" id="answer" disabled><button class="waves-effect waves-light btn" onclick="generateEq()">Next</button><i class="material-icons right">done</i>`;
         return;
     } else {
-        document.getElementById("form").innerHTML = `<br><form method="post" id="mathForm"><input type="number" placeholder="Answer" id="answer"><button type='button' class="waves-effect waves-light btn" onclick="checkMath()">Submit</button></form><i class="material-icons right">clear</i>`;
+        document.getElementById("form").innerHTML = `<br><form method="post" id="mathForm"><input type="number" id="answer"><button type='button' class="waves-effect waves-light btn" onclick="checkMath()">Submit</button></form><i class="material-icons right">clear</i>`;
         return;
     }
 }
