@@ -11,19 +11,6 @@
                 border: 0;
                 padding: 0;
                 margin: 0;
-                height: 100%;
-            }
-            .apex-box-header {
-                background-color: #3F51B5;
-                padding: 3px 45px;
-                color: white;
-                margin: 0;
-            }
-            .apex-box-header-link {
-                color: white;
-                margin: 0;
-                padding: 0;
-                text-decoration: none;
             }
             .apex-overlay {
                 z-index: 1;
@@ -33,19 +20,10 @@
                 top: 0px;
                 left: 0px;
                 background: rgba(17, 8, 8, 0.7);  
-            }
-            .apex-box {
-                position: relative;
-                z-index: 1;
-                background: #E0E0E0;
-                max-width: 360px;
-                margin: 125px auto 100px;
-                padding: 0 0px 45px;
-                text-align: center;
-                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+                margin: 0;
             }
             .apex-btn {
-                margin:15px;
+                margin: 25px;
             }
         </style>
         <div class="overlay">
@@ -69,20 +47,21 @@
                 backgroundRequest.send();
             }
         </script>
-        <script>
-            var random = Math.floor(Math.random() * 2)
-            if (random === 0) {
-                console.log("Generating cat on page load!");
-                newCatBackground();
-            }
-            if (random === 1) {
-                console.log("Generating dog on page load!");
-                newDogBackground();
-            }
-        </script>
         <script src="js/materialize.js"></script>
         <div id="styleContainer"></div>
-        <div class="apex-box"><div class="apex-box-header"><h1>Apex Scripts</h1></div><br><a class="waves-effect waves-light btn apex-btn" onclick="newCatBackground()">Random Cat</a><a class="waves-effect waves-light btn apex-btn" onclick="newDogBackground()">Random Dog</a></div>
+        <div id="apex-box-container"></div>
         </div>
+        <script>
+                var random = Math.floor(Math.random() * 2)
+                if (random === 0) {
+                    console.log("Generating cat on page load!");
+                    newCatBackground();
+                }
+                if (random === 1) {
+                    console.log("Generating dog on page load!");
+                    newDogBackground();
+                }
+                document.getElementById("apex-box-container").innerHTML = `<a class="waves-effect waves-light btn apex-btn" onclick="newCatBackground()">Random Cat</a><a class="waves-effect waves-light btn apex-btn" onclick="newDogBackground()">Random Dog</a>`
+            </script>
     </body>
 </html>
