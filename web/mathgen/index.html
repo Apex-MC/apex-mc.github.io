@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">        
     </head>
     <body>
         <style>
@@ -10,29 +13,39 @@
                 margin: 0;
                 height: 100%;
             }
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .apex-box-header {
+                background-color: #3F51B5;
+                padding: 3px 45px;
+                color: white;
+                margin: 0;
             }
-            .overlay {
+            .apex-box-header-link {
+                color: white;
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+            }
+            .apex-overlay {
                 z-index: 1;
                 height: 100%;
                 width: 100%;
                 position: absolute;
                 top: 0px;
                 left: 0px;
-                background: rgba(0, 0, 0, 0.7);  
+                background: rgba(17, 8, 8, 0.7);  
             }
-            .box {
+            .apex-box {
                 position: relative;
                 z-index: 1;
-                background: #FFFFFF;
+                background: #E0E0E0;
                 max-width: 360px;
-                margin: 0 auto 100px;
-                padding: 45px;
+                margin: 125px auto 100px;
+                padding: 0 0px 45px;
                 text-align: center;
                 box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            }
+            .apex-btn {
+                margin:15px;
             }
         </style>
         <div class="overlay">
@@ -55,10 +68,21 @@
                 };
                 backgroundRequest.send();
             }
-
         </script>
+        <script>
+            var random = Math.floor(Math.random() * 2)
+            if (random === 0) {
+                console.log("Generating cat on page load!");
+                newCatBackground();
+            }
+            if (random === 1) {
+                console.log("Generating dog on page load!");
+                newDogBackground();
+            }
+        </script>
+        <script src="js/materialize.js"></script>
         <div id="styleContainer"></div>
-        <div class="box center"><h1>Apex Scripts</h1><br><button class="btn" onclick="newCatBackground()">Random Cat Background</button><button class="btn" onclick="newDogBackground()">Random Dog Background</button></div>
+        <div class="apex-box"><div class="apex-box-header"><h1>Apex Scripts</h1></div><br><a class="waves-effect waves-light btn apex-btn" onclick="newCatBackground()">Random Cat</a><a class="waves-effect waves-light btn apex-btn" onclick="newDogBackground()">Random Dog</a></div>
         </div>
     </body>
 </html>
